@@ -94,19 +94,21 @@
     </header>
 
     <main class="bg-[#F0FDF4]">
-        <section class="pb-96 pt-10">
+        <section class="mb-28 pt-10">
           <h2 class="mb-3 text-center text-3xl font-semibold">Choose Your Trees</h2>
 
         <div class="pt-3 2xl:px-4 relative md:flex justify-center lg:gap-9">
             <!-- Category section starts from here -->
           <div id="btnContainer" class="mb-6">
               <h3 class="font-bold mb-3 ">Categories</h3>
-              <div id="categoryContainer" class="grid grid-cols-2 2xl:mr-12 md:grid-cols-1 justify-items-start"></div>
+              <div id="categoryContainer" class="grid grid-cols-2 2xl:mr-3 md:grid-cols-1 justify-items-start">
+                <button class="btn btn-ghost text-sm font-normal active:bg-[#15803d] active:text-white">All Trees</button>
+              </div>
           </div>
 
           <!-- Cards section starts from here -->
-          <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5 justify-items-center">
-            <div class="bg-white w-fit p-2 lg:p-3 flex flex-col mx-auto rounded-md">
+          <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-0 lg:gap-5 items-start justify-items-center">
+            <div class="bg-white p-2 lg:p-3 flex flex-col mx-auto rounded-md">
               <img src="./assets/mango-min.jpg" alt="" class="w-64 lg:w-72 h-72 self-center rounded-sm">
               <h3 class="font-bold py-3">Mango Tree</h3>
               <p class="text-sm mb-3 w-72 text-[#1F2937]">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
@@ -139,11 +141,30 @@
           </div>
 
           <!-- History section starts from here -->
-          <div id="historySec" class="hidden 2xl:block 2xl:relative absolute p-3 rounded-lg w-4/6 max-w-96 min-h-[500px] top-14 2xl:top-0 right-10 2xl:right-0 bg-white">
+          <div id="historySec" class="hidden 2xl:block 2xl:relative absolute p-3 rounded-lg w-4/6 max-w-96 min-h-[600px] top-3 2xl:top-0 right-14 2xl:right-0 bg-white">
             <h2 class="font-bold mb-3">Your chart</h2>
           </div>
           <button onclick="toggleHistory()" class="absolute 2xl:hidden -top-10 right-6 bg-[#166534] text-white p-3 rounded-full"><i class="fa-solid fa-clock-rotate-left"></i></button>
         </div>
+        </section>
+
+        <!-- About Campaign section starts from here -->
+        <section class="flex flex-col items-center mx-auto pb-40">
+          <h2 class="text-3xl font-semibold mb-10">About the Campaign</h2>
+          <div class="flex flex-col md:flex-row md:gap-8 px-8">
+            <div class="flex justify-center mb-4 md:w-3/7">
+              <img src="./assets/about.png" alt="about section image" class="w-full">
+            </div>
+
+            <div class="ml-3 md:w-1/2 flex flex-col justify-center">
+              <p class="text-sm text-[#1F2937] max-w-[550px] mb-5">Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
+              <ul class="list-disc pl-4">
+                <li class="text-sm text-[#1F2937]">Restoration of natural habitats</li>
+                <li class="text-sm text-[#1F2937]">Improvement of air quality</li>
+                <li class="text-sm text-[#1F2937]">Support for local communities</li>
+              </ul>
+            </div>
+          </div>
         </section>
     </main>
 
