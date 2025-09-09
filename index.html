@@ -118,6 +118,19 @@
           <!-- History section starts from here -->
           <div id="historySec" class="hidden 2xl:block 2xl:relative absolute p-3 rounded-lg w-4/6 max-w-96 min-h-[600px] max-h-[1200px] top-3 2xl:top-0 right-14 2xl:right-0 bg-white">
             <h2 class="font-bold mb-3">Your chart</h2>
+            <div class="flex flex-col gap-2">
+
+              <div id="historyBox" class="flex flex-col gap-4">
+              </div>
+
+              <div id="totalCal" class="hidden">
+                <hr class="text-gray-300 font-bold">
+                <div class="flex justify-between">
+                  <h2 class="text-lg font-semibold">Total:</h2>
+                  <p class="text-lg font-semibold">৳<span id="totalCost">0</span></p>
+                </div>
+              </div>
+            </div>
           </div>
           <button onclick="toggleHistory()" class="absolute 2xl:hidden -top-10 right-6 bg-[#166534] text-white p-3 rounded-full"><i class="fa-solid fa-clock-rotate-left"></i></button>
         </div>

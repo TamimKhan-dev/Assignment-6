@@ -37,9 +37,9 @@ const displayCarts = (arr) => {
               <p class="text-sm mb-3 w-72 text-[#1F2937]">${elm.description}</p>
               <div class="flex justify-between w-full mb-3">
                 <p class="px-4 py-1 rounded-3xl bg-[#DCFCE7] text-[#15803D]">${elm.category}</p>
-                <p class="font-semibold">$${elm.price}</p>
+                <p class="font-semibold">৳${elm.price}</p>
               </div>
-              <button class="btn btn-block bg-[#15803d] text-white rounded-3xl cursor-pointer">Add to Cart</button>
+              <button onclick="displayHistory(${elm.price}, '${elm.name}', ${elm.id})" class="btn btn-block bg-[#15803d] text-white rounded-3xl cursor-pointer">Add to Cart</button>
             </div>
      `;
    });
@@ -83,7 +83,7 @@ const displayWordDetails = (plant) => {
             <h2 class="text-xl font-bold mb-3">${plant.name}</h2>
             <img src="${plant.image}" alt="modal img" class="w-full max-h-96 rounded-lg mb-3">
             <p><span class="font-bold">Category: </span>${plant.category}</p>
-            <p class="my-3"><span class="font-bold">Price: </span>$${plant.price}</p>
+            <p class="my-3"><span class="font-bold">Price: </span>৳${plant.price}</p>
             <p><span class="font-bold">Description: </span>${plant.description}</p>
           </div>
     `;
@@ -102,9 +102,9 @@ const displayLevelCart = (arr) => {
               <p class="text-sm mb-3 w-72 text-[#1F2937]">${elm.description}</p>
               <div class="flex justify-between w-full mb-3">
                 <p class="px-4 py-1 rounded-3xl bg-[#DCFCE7] text-[#15803D]">${elm.category}</p>
-                <p class="font-semibold">$${elm.price}</p>
+                <p class="font-semibold">৳${elm.price}</p>
               </div>
-              <button class="btn btn-block bg-[#15803d] text-white rounded-3xl cursor-pointer">Add to Cart</button>
+              <button onclick="displayHistory(${elm.price}, '${elm.name}', ${elm.id})" class="btn btn-block bg-[#15803d] text-white rounded-3xl cursor-pointer">Add to Cart</button>
             </div>
      `;
     })
@@ -133,6 +133,35 @@ const toggleHistory = () => {
   const historySec = document.getElementById('historySec');
 
   historySec.classList.toggle('hidden');
+}
+
+const displayHistory = (price, name, id) => {
+   const historyBox = document.getElementById('historyBox');
+   const totalCal = document.getElementById('totalCal').classList.remove('hidden');
+   const totalCost = document.getElementById('totalCost');
+   
+   const cal = parseInt(totalCost.innerText) + price;
+   totalCost.innerText = cal;
+
+   historyBox.innerHTML += `
+           <div class="bg-[#F0FDF4] p-3 flex justify-between">
+                  <div>
+                    <h3 class="font-semibold mb-1">${name}</h3>
+                    <p class="text-gray-500">৳${price} x 1 = <span>${price}</span></p>
+                  </div>
+                  <button id="remove-btn-${id}" onclick="removeHistory(${id}, ${price})" class="cursor-pointer">❌</button>
+                </div> 
+   `;
+   
+   
+}
+
+const removeHistory = (id) => {
+   const historyBtn = document.getElementById(`remove-btn-${id}`);
+   const totalCost = document.getElementById('totalCost');
+  const price = historyBtn.previousElementSibling.querySelector('p').querySelector('span');
+  totalCost.innerText = parseInt(totalCost.innerText) - parseInt(price.innerText);
+  historyBtn.parentElement.remove();
 }
 
 loadCarts()
