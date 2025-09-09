@@ -4,7 +4,22 @@ const loadCategories = () => {
      .then(json => displayCategory(json.categories))
 }
 
+const manageSpinner = (status) => {
+  const spinner = document.getElementById('spinner');
+  const cartsContainer = document.getElementById('cartsContainer');
+   if (status === true) {
+      spinner.classList.add('flex');
+      spinner.classList.remove('hidden');
+      cartsContainer.classList.add('hidden');
+   } else {
+      spinner.classList.remove('flex');
+      spinner.classList.add('hidden');
+      cartsContainer.classList.remove('hidden');
+   }
+}
+
 const loadCarts = () => {
+  manageSpinner(true)
   fetch('https://openapi.programming-hero.com/api/plants')
     .then(res => res.json())
     .then(json => displayCarts(json.plants))
@@ -28,7 +43,8 @@ const displayCarts = (arr) => {
             </div>
      `;
    });
-};
+   manageSpinner(false);
+}
 
 const removeActive = () => {
    const cateBtns = document.querySelectorAll('.cateBtns');
@@ -40,6 +56,7 @@ const removeActive = () => {
 }
 
 const loadLevelCart = (id) => {
+  manageSpinner(true);
    const url = `https://openapi.programming-hero.com/api/category/${id}`;
 
     fetch(url)
@@ -49,7 +66,7 @@ const loadLevelCart = (id) => {
         const clickedBtn = document.getElementById(`category-btn-${id}`);
         clickedBtn.classList.add('active');
         displayLevelCart(json.plants)
-      })
+      })    
 }
 
 const loadWordDetail = (id) => {
@@ -91,7 +108,7 @@ const displayLevelCart = (arr) => {
             </div>
      `;
     })
-
+    manageSpinner(false);
 }
 
 const displayCategory = (arr) => {
