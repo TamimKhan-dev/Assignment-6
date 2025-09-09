@@ -107,7 +107,7 @@
           </div>
 
           <!-- Carts section starts from here -->
-          <div id="cartsContainer" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-0 lg:gap-5 items-start justify-items-center">
+          <div id="cartsContainer" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-2 lg:gap-5 items-start justify-items-center">
           </div>
 
           <!-- Spinner -->
@@ -116,7 +116,7 @@
           </div>
 
           <!-- History section starts from here -->
-          <div id="historySec" class="hidden 2xl:block 2xl:relative absolute p-3 rounded-lg w-4/6 max-w-96 min-h-[600px] max-h-[1200px] top-3 2xl:top-0 right-14 2xl:right-0 bg-white">
+          <div id="historySec" class="hidden 2xl:block 2xl:relative absolute p-3 rounded-lg w-4/6 max-w-96 min-h-[600px] max-h-[1700px] top-3 2xl:top-0 right-14 2xl:right-0 bg-white">
             <h2 class="font-bold mb-3">Your chart</h2>
             <div class="flex flex-col gap-2">
 
@@ -132,7 +132,7 @@
               </div>
             </div>
           </div>
-          <button onclick="toggleHistory()" class="absolute 2xl:hidden -top-10 right-6 bg-[#166534] text-white p-3 rounded-full"><i class="fa-solid fa-clock-rotate-left"></i></button>
+          <button onclick="toggleHistory()" class="absolute 2xl:hidden -top-4 md:-top-10 right-1 md:right-6 bg-[#166534] text-white p-3 rounded-full"><i class="fa-solid fa-clock-rotate-left"></i>History</button>
         </div>
         </section>
 
@@ -160,15 +160,15 @@
           <h2 class="text-[#1F2937] text-4xl font-bold">Our Impact</h2>
 
           <div class="flex flex-col xl:flex-row gap-5 xl:gap-10 mt-6">
-            <div class="bg-white px-24 xl:px-32 py-12 rounded-lg">
+            <div class="bg-white hover:bg-[#B9F8CE] px-24 xl:px-32 py-12 rounded-lg shadow-[0px_10px_15px_-3px_rgba(0,_0,_0,_0.1)] cursor-pointer">
               <h3 class="text-[#15803D] text-3xl font-semibold text-center">500k+</h3>
               <p class="text-base text-[#1F2937]">Trees Planted</p>
             </div>
-            <div class="bg-white px-24 xl:px-32 py-12 rounded-lg">
+            <div class="bg-white hover:bg-[#B9F8CE] px-24 xl:px-32 py-12 rounded-lg shadow-[0px_10px_15px_-3px_rgba(0,_0,_0,_0.1)] cursor-pointer">
               <h3 class="text-[#15803D] text-3xl font-semibold text-center">120+</h3>
               <p class="text-base text-[#1F2937]">Communities Involved</p>
             </div>
-            <div class="bg-white px-24 xl:px-32 py-12 rounded-lg">
+            <div class="bg-white hover:bg-[#B9F8CE] px-24 xl:px-32 py-12 rounded-lg shadow-[0px_10px_15px_-3px_rgba(0,_0,_0,_0.1)] cursor-pointer">
               <h3 class="text-[#15803D] text-3xl font-semibold text-center">30+</h3>
               <p class="text-base text-[#1F2937]">Countries Reached</p>
             </div>
@@ -182,11 +182,11 @@
         <form class="bg-[#15803D] rounded-lg flex flex-col px-10 py-10 gap-4 lg:w-1/3">
           <input type="text" placeholder="Your Name" class="input w-full" />
           <input type="text" placeholder="Your Email Address" class="input w-full" />
-          <select class="select w-full">
+          <select class="w-full bg-white py-3 border-none rounded-sm outline-none">
             <option disabled selected>Number of Trees</option>
-            <option>Crimson</option>
-            <option>Amber</option>
-            <option>Velvet</option>
+            <option>1 Tree - $5</option>
+            <option>5 Trees - $25</option>
+            <option>10 Trees - $50</option>
           </select>
           <button class="btn btn-block bg-[#FACC15] rounded-3xl text-[#15803D]">Donate Now</button>
         </form>

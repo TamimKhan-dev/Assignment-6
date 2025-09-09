@@ -31,7 +31,7 @@ const displayCarts = (arr) => {
 
    arr.forEach(elm => {
      cartsContainer.innerHTML += `
-            <div class="bg-white p-2 lg:p-3 flex flex-col mx-auto rounded-md">
+            <div class="bg-white p-2 lg:p-3 flex flex-col mx-auto rounded-md mb-3">
               <img src="${elm.image}" alt="" class="w-64 lg:w-72 h-72 self-center rounded-sm">
               <h3 onclick="loadWordDetail(${elm.id})" class="font-bold py-3 cursor-pointer">${elm.name}</h3>
               <p class="text-sm mb-3 w-72 text-[#1F2937]">${elm.description}</p>
@@ -142,7 +142,8 @@ const displayHistory = (price, name, id) => {
    
    const cal = parseInt(totalCost.innerText) + price;
    totalCost.innerText = cal;
-
+   
+   alert(`${name} has been added to the cart.`);
    historyBox.innerHTML += `
            <div class="bg-[#F0FDF4] p-3 flex justify-between">
                   <div>
